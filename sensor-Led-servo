@@ -1,0 +1,22 @@
+#include <Servo.h> 
+int val = 0;
+Servo servo;        //Servoオブジェクトを作成
+
+void setup() {
+     servo.attach(6);  //D6ピンをサーボの信号線として設定
+     Serial.begin(9600) ;     // 9600bpsでシリアル通信のポートを開きます
+ }
+ void loop() {
+     int ans ;
+     ans = analogRead(0)  ;   // センサーから読込む
+     Serial.println(ans) ;    // シリアルモニターに表示させる
+     delay(100) ;             // 500ms時間待ち
+     val = analogRead(0);
+ {if (val > 450){ digitalWrite(9, HIGH);
+  servo.write(90);
+delay(1000);}
+  if (val < 450);{
+  digitalWrite(9, LOW);
+servo.write(0); //
+ }}}
+ 
